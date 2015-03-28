@@ -11,13 +11,18 @@ public class Match implements Comparable<Match> {
     private List<Player> radiantPlayers;
     private List<Player> direPlayers;
 
+    private int duration;
+    public String lobbyType;
+    public String gameMode;
+
     private boolean radiantWin;
 
-    public Match(String id, List<Player> radiantPlayers, List<Player> direPlayers) {
+    public Match(String id, List<Player> radiantPlayers, List<Player> direPlayers, String lobbyType) {
 
         this.matchID = id;
         this.radiantPlayers = radiantPlayers;
         this.direPlayers = direPlayers;
+        this.lobbyType = lobbyType;
 
     }
 
