@@ -12,8 +12,8 @@ public class Match implements Comparable<Match> {
     private List<Player> direPlayers;
 
     private int duration;
-    public String lobbyType;
-    public String gameMode;
+    private String lobbyType;
+    private String gameMode;
 
     private boolean radiantWin;
 
@@ -72,6 +72,30 @@ public class Match implements Comparable<Match> {
 
     public void setRadiantWin(boolean radiantWin) {
         this.radiantWin = radiantWin;
+    }
+
+    public String getLobbyType() {
+        return lobbyType;
+    }
+
+    public void setLobbyType(String lobbyType) {
+        this.lobbyType = lobbyType;
+    }
+
+    public String getGameMode() {
+        return gameMode;
+    }
+
+    public void setGameMode(String gameMode) {
+        this.gameMode = gameMode;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 
     @Override

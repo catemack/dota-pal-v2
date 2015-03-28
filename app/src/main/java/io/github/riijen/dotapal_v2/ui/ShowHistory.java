@@ -51,11 +51,9 @@ public class ShowHistory extends Activity {
         HashMap<String, Match> testMap = new HashMap<>();
         List<Player> testPlayers = new ArrayList<>();
         testPlayers.add(new Player("555", "444"));
-        testMap.put("123", new Match("1234", testPlayers, testPlayers));
-        matchHistory = new MatchHistory(testMap);
         matchArray = new ArrayList<>();
-        matchArray.add(new Match("1234", testPlayers, testPlayers);
-        matchArray.add(new Match("5234", testPlayers, testPlayers));
+        matchArray.add(new Match("1234", testPlayers, testPlayers, "Ranked"));
+        matchArray.add(new Match("5234", testPlayers, testPlayers, "Casual"));
         listView = (ListView) findViewById(R.id.matchHistoryListView);
         adapter = new ListViewAdapter(this, matchArray);
         listView.setAdapter(adapter);
@@ -96,7 +94,11 @@ public class ShowHistory extends Activity {
 
             Picasso.with(getContext()).load(Urls.getHeroUrl(currentMatch.getPlayer(playerID).getHeroID(), "small")).into(heroImageView);
             heroTextView.setText(currentMatch.getPlayer(playerID).getHeroID());
-            wLTextView.setText(currentMatch.hasWon(playerID));
+            if (currentMatch.hasWon(playerID)) {
+                wLTextView.setText("Win");
+            } else {
+                wLTextView.setText("Loss");
+            }
             gameTypeTextView.setText(currentMatch.getLobbyType());
             durationTextView.setText(currentMatch.getDuration());
 
