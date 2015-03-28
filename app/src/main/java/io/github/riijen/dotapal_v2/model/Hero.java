@@ -25,6 +25,19 @@ public enum Hero {
     TINY            ("tiny", "19", "Tiny"),
     VENGEFULSPIRIT  ("vengefulspirit", "20", "Vengeful Spirit"),
     WINDRANGER      ("windrunner", "21", "Windranger"),
+    ZEUS            ("zuus", "22", "Zeus"),
+    KUNKKA          ("kunkka", "23", "Kunkka"),
+    LINA            ("lina", "25", "Lina"),
+    LICH            ("lich", "31", "Lich"),
+    LION            ("lion", "26", "Lion"),
+    SHADOWSHAMAN    ("shadow_shaman", "27", "Shadow Shaman"),
+    SLARDAR         ("slardar", "28", "Slardar"),
+    TIDEHUNTER      ("tidehunter", "29", "Tidehunter"),
+    WITCHDOCTOR     ("witch_doctor", "30", "Witch Doctor"),
+    RIKI            ("riki", "32", "Riki"),
+    ENIGMA          ("enigma", "33", "Enigma"),
+    TINKER          ("tinker", "34", "Tinker"),
+    SNIPER          ("sniper", "35", "Sniper"),
 
     private final String name;
     private final String id;
@@ -39,6 +52,8 @@ public enum Hero {
     public String getName() {
         return name;
     }
+
+    public String getFullName() { return "npc_dota_hero_" + name; }
 
     public String getId() {
         return id;
