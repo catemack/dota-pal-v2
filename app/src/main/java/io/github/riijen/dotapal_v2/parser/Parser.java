@@ -38,4 +38,15 @@ public class Parser {
         return matchIds;
     }
 
+    /**
+     * Parse the details of a specific match
+     * @param rawJson
+     */
+
+    public void parseMatchDetails(String rawJson) {
+
+        // TODO
+
+    }
+
 }
