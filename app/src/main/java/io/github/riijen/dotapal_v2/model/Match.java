@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by chase_000 on 2015-03-28.
  */
-public class Match implements Comparable {
+public class Match implements Comparable<Match> {
 
     private String matchID;
     private List<Player> radiantPlayers;
@@ -42,7 +42,16 @@ public class Match implements Comparable {
     }
 
     @Override
-    public int compareTo(Object another) {
-        return 0;
+    public int compareTo(Match another) {
+        int matchID = Integer.parseInt(this.matchID);
+        int anotherMatchID = Integer.parseInt(another.getMatchID());
+
+        if (matchID > anotherMatchID) {
+            return 1;
+        }
+        else if (matchID == anotherMatchID) {
+            return 0;
+        }
+        else return -1;
     }
 }
