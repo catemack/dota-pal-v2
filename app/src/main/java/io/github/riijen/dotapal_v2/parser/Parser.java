@@ -50,7 +50,9 @@ public class Parser {
                 int lobbyType = jmatch.getInt("lobby_type");
                 String lobby_Type;
 
-                if (lobbyType == 1) {
+                if (lobbyType == 0) {
+                    lobby_Type = "public matchmaking";
+                } else if (lobbyType == 1) {
                     lobby_Type = "practice";
                 } else if (lobbyType == 2) {
                     lobby_Type = "tournament";
@@ -59,7 +61,7 @@ public class Parser {
                 } else if (lobbyType == 4) {
                     lobby_Type = "coop with bots";
                 } else if (lobbyType == 5) {
-                    lobby_Type = "Team match";
+                    lobby_Type = "team match";
                 } else if (lobbyType == 6) {
                     lobby_Type = "solo queue";
                 } else if (lobbyType == 7) {
@@ -99,21 +101,8 @@ public class Parser {
      * @param rawJson
      */
 
-    public void parseMatchDetails(String rawJson) {
+    public void parseMatchDetails(String rawJson, List<Match> matches) {
 
-
-
-
-
-
-
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        // TODO
 
     }
-
 }
