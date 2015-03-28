@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">DotaPal</string>
+
     <string name="main_text1">Enter account number. Find from personal Dotabuff.com link at the end of the URL</string>
     <string name="main_text2">Account #: </string>
+    <string name="main_button">Get Stats</string>
+
     <string name="action_settings">Settings</string>
     <string name="match_history">Match History</string>
 </resources>

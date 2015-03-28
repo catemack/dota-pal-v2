@@ -12,7 +12,7 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".ui.MatchHistory"
+            android:name=".ui.ShowHistory"
             android:label="@string/match_history" >
         </activity>
         <activity

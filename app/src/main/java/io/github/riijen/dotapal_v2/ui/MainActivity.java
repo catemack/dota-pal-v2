@@ -1,17 +1,37 @@
 package io.github.riijen.dotapal_v2.ui;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+import io.github.riijen.dotapal_v2.R;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
+
+    private EditText playerID;
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        playerID = (EditText) findViewById(R.id.editText);
+        button = (Button) findViewById(R.id.mainButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), ShowHistory.class);
+                i.putExtra("playerID", playerID.getText().toString());
+                startActivity(i);
+            }
+        });
+
     }
 
 

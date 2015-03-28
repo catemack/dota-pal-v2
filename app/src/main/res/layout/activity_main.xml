@@ -32,4 +32,14 @@
         android:layout_alignEnd="@+id/mainTextView2"
         android:layout_marginTop="15pt"/>
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_button"
+        android:id="@+id/mainButton"
+        android:layout_below="@+id/editText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>
