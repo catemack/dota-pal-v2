@@ -47,6 +47,20 @@ public class Match implements Comparable<Match> {
         return null;
     }
 
+    public boolean hasWon(String playerID) {
+        for (Player radiantPlayer : radiantPlayers) {
+            if (playerID.equals(radiantPlayer.getPlayerID())) {
+                return radiantWin;
+            }
+        }
+        for (Player direPlayer : direPlayers) {
+            if (playerID.equals(direPlayer.getPlayerID())) {
+                return !radiantWin;
+            }
+        }
+        return false;
+    }
+
     public boolean isRadiantWin() {
         return radiantWin;
     }
