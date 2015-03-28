@@ -16,7 +16,7 @@ import io.github.riijen.dotapal_v2.model.Player;
 public class Parser {
 
     /**
-     * Returns the 10 most recently played games from a given account_id
+     * Returns the 5 most recently played games from a given account_id
      * @param rawJson - Raw JSON text buffered from dota 2 api
      *                using account_id - for Jandrix
      */
@@ -39,7 +39,7 @@ public class Parser {
 
             JSONArray matches = result.getJSONArray("matches");
 
-            for (int i = 0 ; i < 10 ; i++) {
+            for (int i = 0 ; i < 5 ; i++) {
 
                 List<Player> radiant = new ArrayList<Player>();
                 List<Player> dire = new ArrayList<Player>();
@@ -47,6 +47,27 @@ public class Parser {
                 JSONObject jmatch = matches.getJSONObject(i);
 
                 String matchId = jmatch.getString("match_id");
+                int lobbyType = jmatch.getInt("lobby_type");
+                String lobby_Type;
+
+                if (lobbyType == 1) {
+                    lobby_Type = "practice";
+                } else if (lobbyType == 2) {
+                    lobby_Type = "tournament";
+                } else if (lobbyType == 3) {
+                    lobby_Type = "tutorial";
+                } else if (lobbyType == 4) {
+                    lobby_Type = "coop with bots";
+                } else if (lobbyType == 5) {
+                    lobby_Type = "Team match";
+                } else if (lobbyType == 6) {
+                    lobby_Type = "solo queue";
+                } else if (lobbyType == 7) {
+                    lobby_Type = "ranked";
+                } else {
+                    lobby_Type = "solo mid 1v1";
+                }
+
                 JSONArray players = jmatch.getJSONArray("players");
 
                 for (int j = 0 ; j < players.length() ; j++) {
@@ -62,7 +83,7 @@ public class Parser {
                     }
                 }
 
-                Match match = new Match(matchId, radiant, dire);
+                Match match = new Match(matchId, radiant, dire, lobby_Type);
                 allMatches.add(match);
             }
 
@@ -78,13 +99,11 @@ public class Parser {
      * @param rawJson
      */
 
-    public void parseMatchDetails(String rawJson, String account_id) {
+    public void parseMatchDetails(String rawJson) {
 
-        JSONTokener convertedJson = new JSONTokener(rawJson);
 
-        try {
-            JSONObject jObject = new JSONObject(convertedJson);
-            JSONObject result = jObject.getJSONObject("result");
+
+
 
 
 
