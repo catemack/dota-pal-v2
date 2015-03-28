@@ -5,20 +5,19 @@ import java.util.List;
 /**
  * Created by chase_000 on 2015-03-28.
  */
-public class Match {
+public class Match implements Comparable {
 
     private String matchID;
     private List<Player> radiantPlayers;
     private List<Player> direPlayers;
+
     private boolean radiantWin;
 
-    public Match(String id, List<Player> radiantPlayers, List<Player> direPlayers,
-                 boolean radiantWin) {
+    public Match(String id, List<Player> radiantPlayers, List<Player> direPlayers) {
 
         this.matchID = id;
         this.radiantPlayers = radiantPlayers;
         this.direPlayers = direPlayers;
-        this.radiantWin = radiantWin;
 
     }
 
@@ -38,4 +37,12 @@ public class Match {
         return radiantWin;
     }
 
+    public void setRadiantWin(boolean radiantWin) {
+        this.radiantWin = radiantWin;
+    }
+
+    @Override
+    public int compareTo(Object another) {
+        return 0;
+    }
 }
