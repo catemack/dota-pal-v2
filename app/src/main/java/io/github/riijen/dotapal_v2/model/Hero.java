@@ -38,6 +38,8 @@ public enum Hero {
     ENIGMA          ("enigma", "33", "Enigma"),
     TINKER          ("tinker", "34", "Tinker"),
     SNIPER          ("sniper", "35", "Sniper"),
+    NECROPHOS       ("necrolyte", "36", "Necrophos");
+
 
     private final String name;
     private final String id;
