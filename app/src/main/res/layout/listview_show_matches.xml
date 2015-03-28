@@ -5,7 +5,7 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="20pt"
         android:id="@+id/listView"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>

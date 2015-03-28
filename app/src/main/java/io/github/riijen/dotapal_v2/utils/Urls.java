@@ -1,13 +1,13 @@
 package io.github.riijen.dotapal_v2.utils;
 
+import io.github.riijen.dotapal_v2.model.Hero;
+
 /**
  * Created by kanghee on 3/28/2015.
  */
 public class Urls {
 
-    public static String getHeroUrl(String heroID, String size) {
-        // get hero name from heroID, put it into <name>
-        // check online doc to see what suffix should be for size: tiny, small, etc
-        return "http://cdn.dota2.com/apps/dota2/images/heroes/<name>_<suffix>";
+    public static String getHeroUrl(String heroID) {
+        return "http://cdn.dota2.com/apps/dota2/images/heroes/" + Hero.findByID(heroID).getName() + "_sb.png";
     }
 }
