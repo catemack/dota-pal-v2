@@ -1,5 +1,8 @@
 package io.github.riijen.dotapal_v2.model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by chase_000 on 2015-03-28.
  */
@@ -38,7 +41,17 @@ public enum Hero {
     ENIGMA          ("enigma", "33", "Enigma"),
     TINKER          ("tinker", "34", "Tinker"),
     SNIPER          ("sniper", "35", "Sniper"),
-    NECROPHOS       ("necrolyte", "36", "Necrophos");
+    NECROPHOS       ("necrolyte", "36", "Necrophos"),
+    WARLOCK         ("warlock", "37", "Warlock"),
+    BEASTMASTER     ("beastmaster", "38", "Beastmaster"),
+    QUEENOFPAIN     ("queenofpain", "39", "Queen of Pain"),
+    VENOMANCER      ("venomancer", "40", "Venomancer"),
+    FACELESSVOID    ("faceless_void", "41", "Faceless Void"),
+    WRAITHKING      ("skeleton_king", "42", "Wraith King"),
+    DEATHPROPHET    ("death_prophet", "43", "Death Prophet"),
+    PHANTOMASSASSIN ("phantom_assassin", "44", "Phantom Assassin"),
+    PUGNA           ("pugna", "45", "Pugna"),
+    TEMPLARASSASSIN ("templar_assassin", "46", "Templar Assassin");
 
 
     private final String name;
@@ -49,6 +62,18 @@ public enum Hero {
         this.name = name;
         this.id = id;
         this.localizedName = localizedName;
+    }
+
+    private static final Map<String, Hero> map;
+    static {
+        map = new HashMap<String, Hero>();
+        for (Hero h : Hero.values()) {
+            map.put(h.id, h);
+        }
+    }
+
+    public static Hero findByID(String id) {
+        return map.get(id);
     }
 
     public String getName() {
