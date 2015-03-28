@@ -10,6 +10,14 @@
         <activity
             android:name=".ui.MainActivity"
             android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".ui.MatchHistory"
+            android:label="@string/match_history" >
+        </activity>
+        <activity
+            android:name=".ui.Splash"
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
