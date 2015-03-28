@@ -20,7 +20,7 @@ public class Parser {
      * @param rawJson - Raw JSON text buffered from dota 2 api
      *                using account_id - for Jandrix
      */
-    public List<Match> parseByAccountId(String rawJson) {
+    public static List<Match> parseByAccountId(String rawJson) {
 
         List<Match> allMatches = null;
         JSONTokener convertedJson = new JSONTokener(rawJson);
@@ -101,9 +101,11 @@ public class Parser {
      * @param rawJson
      */
 
-    public void parseMatchDetails(String rawJson, Match match) {
+    public static void parseMatchDetails(String rawJson, Match match) {
 
         JSONTokener jsonTokener = new JSONTokener(rawJson);
+        List<Player> radiant = new ArrayList<Player>();
+        List<Player> dire = new ArrayList<Player>();
 
         try {
             JSONObject jObject = new JSONObject(jsonTokener);
@@ -116,12 +118,19 @@ public class Parser {
 
             for (int i = 0 ; i < players.length() ; i++) {
                 JSONObject player = players.getJSONObject(i);
+                String account_id = player.getString("account_id");
+                String hero_id = player.getString("hero_id");
+                int player_slot = player.getInt("player_slot");
                 int gpm = player.getInt("gold_per_min");
                 int xpm = player.getInt("xp_per_min");
                 int totalGold = player.getInt("gold");
                 int denies = player.getInt("denies");
                 int last_hits = player.getInt("last_hits");
                 int level = player.getInt("level");
+
+                Player newPlayer = new Player(account_id, hero_id);
+                newPlayer.setGameStats();
+
             }
 
 
