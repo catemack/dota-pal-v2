@@ -28,10 +28,70 @@ public class Player {
         isSet = false;
     }
 
-    public void setGameStats() {
-
+    public void setGameStats(List<String> items, int gpm, int xpm, int totalGold, int denies,
+                             int creeps, int level, int kills, int deaths, int assists) {
+        isSet = true;
+        this.items = items;
+        this.gpm = gpm;
+        this.xpm = xpm;
+        this.totalGold = totalGold;
+        this.denies = denies;
+        this.creeps = creeps;
+        this.level = level;
+        this.kills = kills;
+        this.deaths = deaths;
+        this.assists = assists;
     }
 
+    public String getPlayerID() {
+        return playerID;
+    }
 
+    public String getHeroID() {
+        return heroID;
+    }
 
+    public boolean isSet() {
+        return isSet;
+    }
+
+    public List<String> getItems() {
+        return items;
+    }
+
+    public int getGpm() {
+        return gpm;
+    }
+
+    public int getXpm() {
+        return xpm;
+    }
+
+    public int getTotalGold() {
+        return totalGold;
+    }
+
+    public int getDenies() {
+        return denies;
+    }
+
+    public int getCreeps() {
+        return creeps;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public int getKills() {
+        return kills;
+    }
+
+    public int getDeaths() {
+        return deaths;
+    }
+
+    public int getAssists() {
+        return assists;
+    }
 }
