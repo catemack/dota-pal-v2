@@ -101,33 +101,22 @@ public class ShowHistory extends Activity {
             }
             gameTypeTextView.setText(currentMatch.getLobbyType());
             durationTextView.setText(currentMatch.getDuration());
-
-            rowView.setOnClickListener(new DeckClickListener(deck));
+            kdaTextView.setText(currentMatch.getKda(playerID));
+            rowView.setOnClickListener(new MatchClickListener(currentMatch));
             return rowView;
         }
 
         // OnClickListener for starting new activity with given deck
-        public class DeckClickListener implements View.OnClickListener {
+        public class MatchClickListener implements View.OnClickListener {
 
-            private Deck deck;
+            private Match match;
 
-            public DeckClickListener(Deck deck) {
-                this.deck = deck;
+            public MatchClickListener(Match match) {
+                this.match = match;
             }
 
             public void onClick(View view) {
-                openDialog = new OpenDeckDialog();
-                openDialog.setDeck(deck);
-                openDialog.show(getFragmentManager(), "open deck newDialog");
-            }
-        }
-
-        // OnClickListener which opens a NewDeckDialog
-        public class NewClickListener implements View.OnClickListener {
-
-            public void onClick(View view) {
-                newDialog = new NewDeckDialog();
-                newDialog.show(getFragmentManager(), "new deck newDialog");
+                // do stuff
             }
         }
     }

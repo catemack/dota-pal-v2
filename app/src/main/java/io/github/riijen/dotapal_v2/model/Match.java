@@ -66,6 +66,11 @@ public class Match implements Comparable<Match> {
         return false;
     }
 
+    public String getKda (String playerID) {
+        // todo: implement this shit
+        return "";
+    }
+
     public boolean isRadiantWin() {
         return radiantWin;
     }
