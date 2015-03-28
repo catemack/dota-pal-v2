@@ -117,10 +117,31 @@ public class Parser {
             JSONArray players = result.getJSONArray("players");
 
             for (int i = 0 ; i < players.length() ; i++) {
+
                 JSONObject player = players.getJSONObject(i);
+
                 String account_id = player.getString("account_id");
                 String hero_id = player.getString("hero_id");
+
+                String item1 = player.getString("item_0");
+                String item2 = player.getString("item_1");
+                String item3 = player.getString("item_2");
+                String item4 = player.getString("item_3");
+                String item5 = player.getString("item_4");
+                String item6 = player.getString("item_5");
+
+                List<String> items = new ArrayList<>();
+                items.add(item1);
+                items.add(item2);
+                items.add(item3);
+                items.add(item4);
+                items.add(item5);
+                items.add(item6);
+
                 int player_slot = player.getInt("player_slot");
+                int kills = player.getInt("kills");
+                int deaths = player.getInt("deaths");
+                int assists = player.getInt("assists");
                 int gpm = player.getInt("gold_per_min");
                 int xpm = player.getInt("xp_per_min");
                 int totalGold = player.getInt("gold");
@@ -129,11 +150,19 @@ public class Parser {
                 int level = player.getInt("level");
 
                 Player newPlayer = new Player(account_id, hero_id);
-                newPlayer.setGameStats();
+                newPlayer.setGameStats(items, gpm, xpm, totalGold, denies, last_hits, level, kills,
+                        deaths, assists);
+
+                if (player_slot < 128) {
+                    radiant.add(newPlayer);
+                } else {
+                    dire.add(newPlayer);
+                }
 
             }
 
-
+            match.setRadiantPlayers(radiant);
+            match.setDirePlayers(dire);
 
         } catch (JSONException e) {
             e.printStackTrace();

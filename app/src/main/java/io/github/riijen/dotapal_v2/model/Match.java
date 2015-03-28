@@ -103,6 +103,14 @@ public class Match implements Comparable<Match> {
         this.duration = duration;
     }
 
+    public void setRadiantPlayers(List<Player> radiant) {
+        this.radiantPlayers = radiant;
+    }
+
+    public void setDirePlayers(List<Player> dire) {
+        this.direPlayers = dire;
+    }
+
     @Override
     public int compareTo(Match another) {
         int matchID = Integer.parseInt(this.matchID);
