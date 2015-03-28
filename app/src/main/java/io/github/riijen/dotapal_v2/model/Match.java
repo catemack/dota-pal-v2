@@ -33,6 +33,20 @@ public class Match implements Comparable<Match> {
         return direPlayers;
     }
 
+    public Player getPlayer(String playerID) {
+        for (Player player : radiantPlayers) {
+            if (player.getPlayerID().equals(playerID)) {
+                return player;
+            }
+        }
+        for (Player player : direPlayers) {
+            if (player.getPlayerID().equals(playerID)) {
+                return player;
+            }
+        }
+        return null;
+    }
+
     public boolean isRadiantWin() {
         return radiantWin;
     }
