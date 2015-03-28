@@ -92,7 +92,30 @@ public enum Hero {
     UNDYING         ("undying", "85", "Undying"),
     RUBICK          ("rubick", "86", "Rubick"),
     DISRUPTOR       ("disruptor", "87", "Disruptor"),
-    NYXASSASSIN     ("nyx_assassin", "88", "Nyx Assassin");
+    NYXASSASSIN     ("nyx_assassin", "88", "Nyx Assassin"),
+    NAGASIREN       ("naga_siren", "89", "Naga Siren"),
+    KEEPEROFTHELIGHT ("keeper_of_the_light", "90", "Keeper of the Light"),
+    WISP            ("wisp", "91", "Io"),
+    VISAGE          ("visage", "92", "Visage"),
+    SLARK           ("slark", "93", "Slark"),
+    MEDUSA          ("medusa", "94", "Medusa"),
+    TROLLWARLORD    ("troll_warlord", "95", "Troll Warlord"),
+    CENTAURWARRUNNER ("centaur", "96", "Centaur Warrunner"),
+    MAGNUS          ("magnataur", "97", "Magnus"),
+    TIMBERSAW       ("shredder", "98", "Timbersaw"),
+    BRISTLEBACK     ("bristleback", "99", "Bristleback"),
+    TUSK            ("tusk", "100", "Tusk"),
+    SKYWRATHMAGE    ("skywrath_mage", "101", "Skywrath Mage"),
+    ABADDON         ("abaddon", "102", "Abaddon"),
+    ELDERTITAN      ("elder_titan", "103", "Elder Titan"),
+    LEGIONCOMMANDER ("legion_commander", "104", "Legion Commander"),
+    EMBERSPIRIT     ("ember_spirit", "106", "Ember Spirit"),
+    EARTHSPIRIT     ("earth_spirit", "107", "Earth Spirit"),
+    TERRORBLADE     ("terrorblade", "109", "Terrorblade"),
+    PHOENIX         ("phoenix", "110", "Phoenix"),
+    ORACLE          ("oracle", "111", "Oracle"),
+    TECHIES         ("techies", "105", "Techies"),
+    WINTERWYVERN    ("winter_wyvern", "112", "Winter Wyvern");
 
     private final String name;
     private final String id;
