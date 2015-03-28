@@ -1,4 +1,4 @@
-package io.github.riijen.dotapal_v2;
+package io.github.riijen.dotapal_v2.ui;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
